@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2015", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "classic",
+    "noImplicitAny": true,
+    "outDir": "src/dist",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "rootDir": "src",
+    "sourceMap": false,
+    "target": "ES2015"
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", "dist"]
+}
