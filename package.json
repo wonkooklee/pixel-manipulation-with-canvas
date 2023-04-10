@@ -1,0 +1,32 @@
+{
+  "name": "pixel-manipulation-with-canvas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "With the ImageData object we can directly read and write a data array to manipulate pixel data.",
+  "keywords": [
+    "canvas",
+    "imageData",
+    "getImageData"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wonkooklee/pixel-manipulation-with-canvas"
+  },
+  "author": "Wonkook Lee",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "~5.0.4",
+    "vite": "^4.2.1"
+  }
+}
