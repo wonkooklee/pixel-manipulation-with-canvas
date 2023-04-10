@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parsing Pixels</title>
+    <script type="module" src="/src/pages/parse.ts"></script>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="tabs" aria-label="Demos">
+        <a href="./index.html" aria-current="page">Parsing Pixels</a>
+      </nav>
+
+      <div class="canvas-caption">
+        <span class="legend">Parsed Pixel</span>
+        <span><output id="processed">0</output> / <output id="total">0</output></span>
+      </div>
+      <canvas id="canvas"></canvas>
+
+      <dl class="stats">
+        <div>
+          <dt>Foreground (pixels)</dt>
+          <dd><output id="foreground">0</output></dd>
+        </div>
+        <div>
+          <dt>Background (pixels)</dt>
+          <dd><output id="background">0</output></dd>
+        </div>
+        <div>
+          <dt>Ratio (F/B)</dt>
+          <dd><output id="ratio">0 %</output></dd>
+        </div>
+        <div>
+          <dt><label for="threshold">Threshold (alpha)</label></dt>
+          <dd><input id="threshold" type="number" min="0" max="255" step="5" /></dd>
+        </div>
+      </dl>
+
+      <button id="action" class="action" type="button" disabled>parse</button>
+    </main>
+  </body>
+</html>

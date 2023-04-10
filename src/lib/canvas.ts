@@ -36,3 +36,7 @@ export function loadImage(src: string): Promise<HTMLImageElement> {
 
   return loading;
 }
+
+export function nextFrame(): Promise<DOMHighResTimeStamp> {
+  return new Promise((resolve) => requestAnimationFrame(resolve));
+}

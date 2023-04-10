@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-text: #000;
+  --color-muted: #888;
+  --color-subtle: #a3a3a3;
+  --color-border: #dcdcdc;
+  --color-hover: #efefef;
+  --color-pressed: #bcbcbc;
+  --canvas-size: 400px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: 20px 16px 40px;
+}
+
+.page {
+  width: calc(var(--canvas-size) + 2px);
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 36px;
+}
+
+.tabs a {
+  flex: 1;
+  padding: 16px 0 12px;
+  border-bottom: 2px solid var(--color-border);
+  color: var(--color-subtle);
+  text-align: center;
+  text-decoration: none;
+}
+
+.tabs a:hover {
+  background-color: var(--color-hover);
+}
+
+.tabs a[aria-current="page"] {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+canvas {
+  display: block;
+  box-sizing: content-box;
+  width: var(--canvas-size);
+  height: var(--canvas-size);
+  margin-bottom: 12px;
+  border: 1px solid var(--color-subtle);
+}
+
+.stats + .stats {
+  margin-top: 18px;
+}
+
+.stats > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 1.17em;
+}
+
+.stats dt {
+  color: var(--color-muted);
+}
+
+.stats dt::before {
+  content: "- ";
+}
+
+.stats dt::after {
+  content: ":";
+}
+
+.action {
+  display: block;
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px 0;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--color-border);
+  font: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.action:not(:disabled):active {
+  background-color: var(--color-pressed);
+}
+
+.action:disabled {
+  color: var(--color-muted);
+  cursor: default;
+}
