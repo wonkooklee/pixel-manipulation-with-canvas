@@ -36,11 +36,15 @@ export function findOpaqueBounds(
   return bottom === -1 ? null : { top, right, bottom, left };
 }
 
-export function padBounds({ top, right, bottom, left }: Bounds, padding: number): Bounds {
+export function padBounds(
+  { top, right, bottom, left }: Bounds,
+  padding: number,
+  { width, height }: Pick<ImageData, "width" | "height">,
+): Bounds {
   return {
-    top: top - padding,
-    right: right + padding,
-    bottom: bottom + padding,
-    left: left - padding,
+    top: Math.max(top - padding, 0),
+    right: Math.min(right + padding, width - 1),
+    bottom: Math.min(bottom + padding, height - 1),
+    left: Math.max(left - padding, 0),
   };
 }

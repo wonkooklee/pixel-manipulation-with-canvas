@@ -41,12 +41,23 @@ describe("findOpaqueBounds", () => {
 });
 
 describe("padBounds", () => {
+  const size = { width: 400, height: 400 };
+
   it("expands every side by the padding", () => {
-    expect(padBounds({ top: 59, right: 130, bottom: 174, left: 50 }, 5)).toEqual({
+    expect(padBounds({ top: 59, right: 130, bottom: 174, left: 50 }, 5, size)).toEqual({
       top: 54,
       right: 135,
       bottom: 179,
       left: 45,
+    });
+  });
+
+  it("keeps the padded box inside the image", () => {
+    expect(padBounds({ top: 2, right: 397, bottom: 399, left: 0 }, 5, size)).toEqual({
+      top: 0,
+      right: 399,
+      bottom: 399,
+      left: 0,
     });
   });
 });

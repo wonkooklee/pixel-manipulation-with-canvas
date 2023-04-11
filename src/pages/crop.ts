@@ -92,7 +92,7 @@ function crop(): void {
     return;
   }
 
-  const padded = padBounds(bounds, PADDING);
+  const padded = padBounds(bounds, PADDING, imageData);
 
   drawGuides(padded);
   renderBounds(padded);
