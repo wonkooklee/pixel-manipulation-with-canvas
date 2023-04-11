@@ -7,14 +7,14 @@ With the ImageData object we can directly read and write a data array to manipul
 Install dependencies.
 
 ```bash
-npm install
-npm i
+$ npm install
+$ npm i
 ```
 
 Start live-server with following script.
 
 ```bash
-npm start
+$ npm start
 ```
 
 The script above will compile `.ts` to `.js` and run the live-server on localhost on port `4000`.
