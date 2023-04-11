@@ -11,22 +11,20 @@
     right: <HTMLInputElement>$(IDS.RIGHT),
     top: <HTMLInputElement>$(IDS.TOP),
     width: <HTMLInputElement>$(IDS.WIDTH),
+    samples: <HTMLUListElement>$(IDS.SAMPLES),
   };
 
+  let currentSampleIndex = "1";
   let clicked = false;
-  let offset = 10;
+  let offset = 5;
 
   const axisLength = 400;
   const ctx = domEl.canvas.getContext("2d", {
     alpha: true,
+    willReadFrequently: true,
   });
 
-  const img = new Image();
-  img.src = "./assets/images/crop.png";
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0, axisLength, axisLength);
-    domEl.button.disabled = false;
-  };
+  reset();
 
   domEl.canvas.width = axisLength;
   domEl.canvas.height = axisLength;
@@ -55,6 +53,25 @@
     updateTextNode(domEl.button, "done");
   });
 
+  domEl.samples.addEventListener("click", (e) => {
+    const target = e.target as HTMLLIElement;
+    const clickedIndex = target.innerText;
+    if (clickedIndex === currentSampleIndex || target.tagName !== "LI") {
+      return;
+    }
+
+    Array.from(domEl.samples.children).forEach((dom, idx) => {
+      if (idx + 1 === Number(clickedIndex)) {
+        dom.classList.add("current");
+      } else {
+        dom.classList.remove("current");
+      }
+    });
+
+    currentSampleIndex = clickedIndex;
+    reset();
+  });
+
   function getCroppingCoordinates(rgbaSequance: Uint8ClampedArray) {
     const vertical = [];
     const horizontal = [];
@@ -75,6 +92,21 @@
       bottom: (vertical.pop() || 0) + offset,
       left: Math.min(...horizontal) - offset,
       right: Math.max(...horizontal) + offset,
+    };
+  }
+
+  function drawImage({
+    src,
+    contextToDraw,
+  }: {
+    src: string;
+    contextToDraw: CanvasRenderingContext2D;
+  }) {
+    const img = new Image();
+    img.src = src;
+    img.onload = function () {
+      contextToDraw.drawImage(img, 0, 0, axisLength, axisLength);
+      domEl.button.disabled = false;
     };
   }
 
@@ -116,6 +148,30 @@
     textNode.innerText =
       typeof content === "number" ? content.toString() : content;
   }
+
+  function clear() {
+    ctx.clearRect(0, 0, axisLength, axisLength);
+  }
+
+  function reset() {
+    clear();
+    drawImage({
+      src: `./assets/images/crop-${currentSampleIndex}.png`,
+      contextToDraw: ctx,
+    });
+
+    clicked = false;
+    const defaultText = "0";
+    updateTextNode(domEl.top, defaultText);
+    updateTextNode(domEl.right, defaultText);
+    updateTextNode(domEl.bottom, defaultText);
+    updateTextNode(domEl.left, defaultText);
+    updateTextNode(domEl.width, defaultText);
+    updateTextNode(domEl.height, defaultText);
+
+    updateTextNode(domEl.button, "crop");
+    domEl.bottom.disabled = false;
+  }
 })({
   IDS: {
     BOTTOM: "bottom",
@@ -127,5 +183,6 @@
     RIGHT: "right",
     TOP: "top",
     WIDTH: "width",
+    SAMPLES: "samples",
   },
 });
