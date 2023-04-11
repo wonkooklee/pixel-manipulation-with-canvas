@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cropping Image</title>
+    <script type="module" src="/src/pages/crop.ts"></script>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="tabs" aria-label="Demos">
+        <a href="./index.html">Parsing Pixels</a>
+        <a href="./crop.html" aria-current="page">Cropping Image</a>
+      </nav>
+
+      <canvas id="canvas"></canvas>
+
+      <dl class="stats">
+        <div>
+          <dt>Top</dt>
+          <dd><output id="top">0</output> px</dd>
+        </div>
+        <div>
+          <dt>Right</dt>
+          <dd><output id="right">0</output> px</dd>
+        </div>
+        <div>
+          <dt>Bottom</dt>
+          <dd><output id="bottom">0</output> px</dd>
+        </div>
+        <div>
+          <dt>Left</dt>
+          <dd><output id="left">0</output> px</dd>
+        </div>
+      </dl>
+
+      <dl class="stats">
+        <div>
+          <dt>Width</dt>
+          <dd><output id="width">0</output> px</dd>
+        </div>
+        <div>
+          <dt>Height</dt>
+          <dd><output id="height">0</output> px</dd>
+        </div>
+      </dl>
+
+      <dl class="stats">
+        <div>
+          <dt>Padding</dt>
+          <dd><output id="padding">0</output> px</dd>
+        </div>
+      </dl>
+
+
+      <button id="action" class="action" type="button" disabled>crop</button>
+    </main>
+  </body>
+</html>
