@@ -26,10 +26,10 @@
 
   reset();
 
+  updateTextNode(domEl.offset, offset);
+
   domEl.canvas.width = axisLength;
   domEl.canvas.height = axisLength;
-
-  updateTextNode(domEl.offset, offset);
 
   domEl.button.addEventListener("click", () => {
     if (clicked) return;
@@ -49,7 +49,6 @@
     updateTextNode(domEl.left, left);
     updateTextNode(domEl.width, right - left);
     updateTextNode(domEl.height, bottom - top);
-
     updateTextNode(domEl.button, "done");
   });
 
@@ -162,15 +161,15 @@
 
     clicked = false;
     const defaultText = "0";
+    domEl.bottom.disabled = false;
+
     updateTextNode(domEl.top, defaultText);
     updateTextNode(domEl.right, defaultText);
     updateTextNode(domEl.bottom, defaultText);
     updateTextNode(domEl.left, defaultText);
     updateTextNode(domEl.width, defaultText);
     updateTextNode(domEl.height, defaultText);
-
     updateTextNode(domEl.button, "crop");
-    domEl.bottom.disabled = false;
   }
 })({
   IDS: {
