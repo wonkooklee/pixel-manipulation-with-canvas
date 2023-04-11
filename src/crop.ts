@@ -52,18 +52,18 @@
     updateTextNode(domEl.button, "done");
   });
 
-  domEl.samples.addEventListener("click", (e) => {
-    const target = e.target as HTMLLIElement;
-    const clickedIndex = target.innerText;
-    if (clickedIndex === currentSampleIndex || target.tagName !== "LI") {
+  domEl.samples.addEventListener("click", ({ target }) => {
+    const eventtarget = target as HTMLLIElement;
+    const clickedIndex = eventtarget.innerText;
+    if (clickedIndex === currentSampleIndex || eventtarget.tagName !== "LI") {
       return;
     }
 
-    Array.from(domEl.samples.children).forEach((dom, idx) => {
+    Array.from(domEl.samples.children).forEach(({ classList }, idx) => {
       if (idx + 1 === Number(clickedIndex)) {
-        dom.classList.add("current");
+        classList.add("current");
       } else {
-        dom.classList.remove("current");
+        classList.remove("current");
       }
     });
 
