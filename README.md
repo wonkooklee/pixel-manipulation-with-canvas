@@ -34,11 +34,11 @@ const params = {
 
 ### Parsing Pixels
 
-<img width="517" alt="Screen Shot 2023-04-11 at 11 39 33 PM" src="https://user-images.githubusercontent.com/61101022/231198306-4f5503de-894a-4b5c-8f35-5317fae7f2ea.png">
+<img width="517" alt="Screen Shot 2023-04-11 at 11 39 33 PM-min" src="https://user-images.githubusercontent.com/61101022/231198904-62240ee5-bfa7-4f62-beb5-2b8d9ea0d363.png">
 
 ### Cropping Image
 
-<img width="501" alt="Screen Shot 2023-04-11 at 11 40 19 PM" src="https://user-images.githubusercontent.com/61101022/231198535-86349327-8f12-49f2-a9a6-1c308d7d78dc.png">
+<img width="501" alt="Screen Shot 2023-04-11 at 11 40 19 PM-min" src="https://user-images.githubusercontent.com/61101022/231198919-85ccc8ad-ebf6-4873-b24d-af0c2ec18984.png">
 
 
 Thanks!
