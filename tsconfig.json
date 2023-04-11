@@ -7,7 +7,7 @@
     "outDir": "src/dist",
     "preserveConstEnums": true,
     "removeComments": true,
-    "rootDir": "src",
+    "baseUrl": "src",
     "sourceMap": false,
     "target": "ES2015"
   },

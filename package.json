@@ -1,15 +1,22 @@
 {
-  "name": "Parsing Pixels",
+  "name": "pixel-manipulation-with-canvas",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "With the ImageData object we can directly read and write a data array to manipulate pixel data.",
+  "repository": {
+    "url": "https://github.com/wonkooklee/pixel-manipulation-with-canvas"
   },
-  "keywords": [],
+  "scripts": {
+    "start": "npx tsc && node src/server.js"
+  },
+  "keywords": [
+    "canvas",
+    "imageData",
+    "getImageData"
+  ],
   "author": "Wonkook Lee",
   "license": "ISC",
   "devDependencies": {
+    "live-server": "^1.2.2",
     "typescript": "^5.0.3"
   }
 }

@@ -22,7 +22,7 @@
   });
 
   const img = new Image();
-  img.src = "/src/assets/images/crop.png";
+  img.src = "./assets/images/crop.png";
   img.onload = function () {
     ctx.drawImage(img, 0, 0, axisLength, axisLength);
     domEl.button.disabled = false;
