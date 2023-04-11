@@ -1,0 +1,34 @@
+.samples {
+  display: flex;
+  margin-top: 20px;
+}
+
+.samples button {
+  position: relative;
+  flex: 1;
+  padding: 12px 0;
+  border: 0;
+  background: none;
+  color: var(--color-pressed);
+  font: inherit;
+  cursor: pointer;
+}
+
+.samples button + button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 24px;
+  background-color: var(--color-pressed);
+  transform: translateY(-50%);
+}
+
+.samples button:hover {
+  background-color: var(--color-hover);
+}
+
+.samples button[aria-pressed="true"] {
+  color: var(--color-text);
+}
