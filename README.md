@@ -70,3 +70,7 @@ cropped, which is how empty margins were trimmed from a signature before resizin
 ```
 
 The pixel logic in `src/lib` has no DOM dependencies and is covered by unit tests.
+
+## License
+
+[ISC](LICENSE) © Wonkook Lee
