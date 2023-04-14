@@ -2,6 +2,8 @@
 
 With the ImageData object we can directly read and write a data array to manipulate pixel data.
 
+[MEDIUM: Canvas API와 Broadcast Channel API를 이용한 자필 서명 이미지 생성 모듈 구현기 - Part.1 (Korean)](https://www.blog.kcd.co.kr/canvas-api%EC%99%80-broadcast-channel-api%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%ED%95%84-%EC%84%9C%EB%AA%85-%EB%AA%A8%EB%93%88-%EA%B5%AC%ED%98%84%EA%B8%B0-part-1-5013e4ad8804)
+
 ## Instructions
 
 Install dependencies.
